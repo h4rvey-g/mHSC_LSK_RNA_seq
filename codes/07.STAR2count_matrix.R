@@ -136,8 +136,8 @@ for (compare in compare_list) {
                                 design = ~ group_list)
   dds <- DESeq(dds,quiet = F) 
   
-  res <- results(dds,contrast=c("group_list", group))  #指定提取为B/A结果
-  
+  res <- results(dds)  #指定提取为B/A结果
+ print(res) 
   
   resOrdered <- res[order(res$padj),]
   DEG_DEseq2 <- as.data.frame(resOrdered)
